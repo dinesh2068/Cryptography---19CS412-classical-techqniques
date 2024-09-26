@@ -30,19 +30,27 @@ Implementation using C or pyhton code
 
 
 ## PROGRAM:
-PROGRAM:
-CaearCipher.
+
+# CaearCipher
+
+```
+
 #include <stdio.h>
 #include <stdlib.h>
  
-// Function to perform Caesar Cipher encryption void caesarEncrypt(char *text, int key) {
-   for (int i = 0; text[i] != '\0'; i++) { char c = text[i];
+// Function to perform Caesar Cipher encryption 
+void caesarEncrypt(char *text, int key) {
+   for (int i = 0; text[i] != '\0'; i++) 
+   { 
+       char c = text[i];
 // Check if the character is an uppercase letter 
-    if (c >= 'A' && c <= 'Z') {
+    if (c >= 'A' && c <= 'Z') 
+    {
     text[i] = ((c - 'A' + key) % 26 + 26) % 26 + 'A';
     }
 // Check if the character is a lowercase letter
-    else if (c >= 'a' && c <= 'z') {
+    else if (c >= 'a' && c <= 'z') 
+    {
         text[i] = ((c - 'a' + key) % 26 + 26) % 26 + 'a';
     }
 // Ignore non-alphabetic characters
@@ -56,25 +64,29 @@ caesarEncrypt(text, -key);
 }
 
 int main() {
-char message[100]; // Declare a character array to store the message int key;
+char message[100]; // Declare a character array to store the message 
+int key;
 
 printf("Enter the message to encrypt: ");
-fgets(message, sizeof(message), stdin); // Read input from the user printf("Enter the Caesar Cipher key (an integer): ");
+fgets(message, sizeof(message), stdin); // Read input from the user 
+printf("Enter the Caesar Cipher key (an integer): ");
 scanf("%d", &key); // Read the key from the user
-// Encrypt the message using the Caesar Cipher caesarEncrypt(message, key); printf("Encrypted Message: %s", message);
+// Encrypt the message using the Caesar Cipher 
+caesarEncrypt(message, key); 
+printf("Encrypted Message: %s", message);
 // Decrypt the message back to the original
  
-caesarDecrypt(message, key); printf("Decrypted Message: %s", message); return 0;
+caesarDecrypt(message, key); 
+printf("Decrypted Message: %s", message);
+return 0;
 }
-
+```
 
 ## OUTPUT:
-OUTPUT:
+
 Simulating Caesar Cipher
 
-
-Input : Anna University
-Encrypted Message : Dqqd Xqlyhuvlwb Decrypted Message : Anna University
+![image](https://github.com/user-attachments/assets/3ef2b791-21b3-4176-8240-fd21b66a4aa9)
 
 ## RESULT:
 The program is executed successfully
